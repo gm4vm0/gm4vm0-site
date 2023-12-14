@@ -1,0 +1,49 @@
+---
+import Navbar from "@components/Navbar.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+	</body>
+</html>
+
+<style lang="scss" is:global>
+	@import "open-props/style";
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	body {
+		font-family: var(--font-sans);
+		background-color: var(--gray-0);
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	a {
+		color: var(--green-9);
+	}
+</style>

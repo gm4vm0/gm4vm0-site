@@ -1,0 +1,93 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+---
+
+<MainLayout title="gm4vm0">
+	<main>
+		<div class="hero">
+			<img src="portrait.png" alt="little me walking" />
+			<div>
+				<h1>gm4vm0</h1>
+				<h3>(a.k.a. sammi)</h3>
+				<h2>
+					welcome to my corner on the <span class="pink">web</span>!
+				</h2>
+				<ul>
+					<li><a href="https://github.com/gm4vm0">github</a></li>
+					<li>
+						<a href="https://www.linkedin.com/in/sammi-shih/"
+							>linkedin</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+</MainLayout>
+
+<style lang="scss">
+	@import "open-props/style";
+	@import "@styles/breakpoints";
+
+	main {
+		.hero {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			margin: var(--size-10) var(--size-fluid-3) 0;
+
+			@include media-md {
+				flex-direction: row;
+				text-align: start;
+				justify-content: center;
+				gap: var(--size-5);
+			}
+
+			div {
+				margin-top: var(--size-5);
+				display: flex;
+				flex-direction: column;
+				gap: var(--size-3);
+
+				@include media-md {
+					margin-top: 0;
+				}
+			}
+
+			img {
+				max-width: var(--size-fluid-7);
+				margin-top: 0;
+			}
+
+			h1 {
+				font-size: var(--font-size-fluid-3);
+				color: var(--pink-6);
+			}
+
+			h2 {
+				font-size: var(--font-size-fluid-1);
+				color: var(--gray-9);
+
+				.pink {
+					color: var(--pink-6);
+				}
+			}
+
+			h3 {
+				font-size: var(--font-size-fluid-0);
+				color: var(--gray-6);
+			}
+
+			ul {
+				display: flex;
+				justify-content: center;
+				gap: var(--size-2);
+
+				@include media-md {
+					justify-content: start;
+				}
+			}
+		}
+	}
+</style>
